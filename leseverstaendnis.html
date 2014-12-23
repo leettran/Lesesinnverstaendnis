@@ -1,0 +1,2904 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Testbatterie-Aufgabe: Lesesinnverständnis</title>
+
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>       
+        <link rel="stylesheet" href="css/style.css" media="screen and (orientation: landscape)" type="text/css">  
+
+        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
+        <script type="text/javascript" src="js/jstorage.js"></script>
+        <script type="text/javascript" src="js/leseverstaendnisScript.js"></script>
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    </head>
+
+
+    <body>
+
+        <!--startpage for neurocare testbatterie with task: lesesinnverständnis-->
+        <div data-role="page" id="leseverstaendnisStart" data-dom-cache=true class="startPage" >
+
+
+            <div data-role="content">
+
+                <div class="testname">Aufgabe<br>Lesesinnverständnis</div>
+
+
+
+            </div>
+
+            <!--script used to show start page for few seconds and the to switch to intro page-->
+            <script type="text/javascript">
+
+                $(document).delegate('#leseverstaendnisStart', 'pageshow', function () {
+
+                    function showJustForWhile() {
+                        setTimeout(function () {
+                            $.mobile.changePage('#leseverstaendnisIntro', {transition: "flip"});
+                        }, 4000);
+
+                    }
+
+
+                    showJustForWhile();
+
+                });
+            </script>
+
+
+        </div> 
+
+        <!--intro page for neurocare testbatterie containing a small introduction to the task Lesesinnverständnis-->
+        <div data-role="page" id="leseverstaendnisIntro" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+
+                <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                <center>
+                    <p class="introText">
+                        
+                        Gleich sehen Sie auf dem Bildschirm ein Wort oder einen kurzen Satz. 
+                        Lesen Sie das Geschriebene aufmerksam. Nachdem Sie auf Weiter gedrückt haben, erscheinen vier Bilder. </br>
+                        Ihre Aufgabe ist es, mit dem Finger das Bild auszuwählen, das <b> am ehesten </b> zum Wort bzw. dem Satz passt. </br> 
+                        Sie können sich nicht korrigieren, treffen Sie daher Ihre Auswahl gut überlegt. 
+                        Wenn Sie das Wort bzw. den Satz noch einmal sehen wollen, drücken Sie auf Zurück. Versuchen Sie dies jedoch so wenig wie möglich zu tun.
+
+                    </p>
+                </center>
+
+
+                <!--only for tests! later uncomment the first line!-->
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToDemo();"/>
+                
+            </div>
+
+
+        </div> 
+        
+        
+         <!--first demo page for neurocare testbatterie containing a demonstration example to the task lesesinnverständnis-->
+        <div data-role="page" id="leseverstaendnisDemo1" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Vase
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" id="demoWeiterBtn" class="defaultButton"/>
+
+            </div>
+            
+            
+            <script type="text/javascript">
+
+                $(document).delegate('#leseverstaendnisDemo1', 'pageshow', function () {
+
+                    function simulateClick() {
+                        setTimeout(function () {
+                            $("#demoWeiterBtn").trigger("click");
+                            $.mobile.changePage('#leseverstaendnisDemo2', {transition: "flip"});
+                        }, 2000);
+
+                    }
+
+
+                    simulateClick();
+
+                });
+            </script>
+
+
+        </div> 
+         
+         
+           <!--second demo page for neurocare testbatterie containing a demonstration example to the task lesesinnverständnis-->
+        <div data-role="page" id="leseverstaendnisDemo2" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\demoPic1.png"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\demoPic2.png"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\demoPic3.png"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\demoPic4.png"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                    <div class="infoDiv" id="infoBalloon" >
+                        
+                    Wenn Sie vor Ihrer Antwort das Wort noch einmal sehen müssen, drücken Sie auf „Zurück“ in der linken oberen Ecke.
+                   
+                    </div>
+                    
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" id="demoZurueckBtn" class="defaultButtonTopLeft"/>
+
+            </div>
+            
+            
+            <script type="text/javascript">
+
+                $(document).delegate('#leseverstaendnisDemo2', 'pageshow', function () {
+
+                    function simulateClick() {
+                        
+                        setTimeout(function () {
+                            $("#infoBalloon").css("visibility","visible");
+                            
+                             setTimeout(function () {
+                                 
+                                 $("#infoBalloon").css("visibility","hidden");
+                                  $("#demoZurueckBtn").trigger("click");
+                            $.mobile.changePage('#leseverstaendnisDemo1Rep', {transition: "flip"});
+                                  }, 5000);
+                             
+                            
+                           
+                        }, 3000);
+
+                    }
+
+
+                    simulateClick();
+
+                });
+            </script>
+
+
+        </div> 
+           
+           
+             <!--first demo page repeated for neurocare testbatterie containing a demonstration example to the task lesesinnverständnis-->
+        <div data-role="page" id="leseverstaendnisDemo1Rep" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Vase
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" id="demoWeiterBtnRep" class="defaultButton"/>
+
+            </div>
+            
+            
+            <script type="text/javascript">
+
+                $(document).delegate('#leseverstaendnisDemo1Rep', 'pageshow', function () {
+
+                    function simulateClick() {
+                        setTimeout(function () {
+                            $("#demoWeiterBtnRep").trigger("click");
+                            $.mobile.changePage('#leseverstaendnisDemo2Rep', {transition: "flip"});
+                        }, 2000);
+
+                    }
+
+
+                    simulateClick();
+
+                });
+            </script>
+
+
+        </div> 
+             
+             
+               <!--second demo page repeated for neurocare testbatterie containing a demonstration example to the task lesesinnverständnis-->
+        <div data-role="page" id="leseverstaendnisDemo2Rep" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\demoPic1.png"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\demoPic2.png"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  id="vase" src="css\images\picsForWords\demoPic3.png"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\demoPic4.png"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft"/>
+
+            </div>
+            
+            
+            <script type="text/javascript">
+
+                $(document).delegate('#leseverstaendnisDemo2Rep', 'pageshow', function () {
+
+                    function simulateClick() {
+                        
+                        setTimeout(function () {
+                            $("#vase").attr('class', 'selectedImage');
+                            
+                             setTimeout(function () {
+                                                               
+                            $.mobile.changePage('#bridgingPage', {transition: "flip"});
+                                  }, 3000);
+                                                       
+                        }, 3000);
+
+                    }
+
+
+                    simulateClick();
+
+                });
+            </script>
+
+
+        </div> 
+               
+               
+                <!--shows a choice between starting trial or showing the example again-->
+        <div data-role="page" id="bridgingPage" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+
+                <image src="css\images\icons\tipp.png" class="infoIcon"/>
+
+                <center>
+                    <p class="introTextTop">
+                        Starten Sie nun mit der eigentlichen Aufgabe
+                    </p>
+
+                    <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTop" onclick="switchToPage('task1Word');"/>
+                </center>
+
+
+                <center>
+                    <p class="introTextMiddle">
+                        Oder möchten Sie das Beispiel noch einmal sehen?
+                    </p>
+
+                    <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonMiddle" onclick="goToDemo();"/>
+                </center>
+
+            </div>
+
+
+        </div> 
+                
+                
+                
+                 <!--first task of lesesinnverständnis-->
+        <div data-role="page" id="task1Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Hose
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task1Pics');"/>
+
+            </div>
+            
+
+        </div>
+                 
+                 
+                       <!--first task of lesesinnverständnis-->
+        <div data-role="page" id="task1Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task1Pic1.png" id="11" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task1Pic2.png" id="12" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task1Pic3.png" id="13" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task1Pic4.png" id="14" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task1Word');"/>
+
+            </div>
+           
+
+        </div> 
+                       
+                       
+                                <!--second task of lesesinnverständnis-->
+        <div data-role="page" id="task2Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Tasse
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task2Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--second task of lesesinnverständnis-->
+        <div data-role="page" id="task2Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task2Pic1.png" id="21" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task2Pic2.png" id="22" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task2Pic3.png" id="23" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task2Pic4.png" id="24" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task2Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                 
+                                                     <!--third task of lesesinnverständnis-->
+        <div data-role="page" id="task3Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Kamin
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task3Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--third task of lesesinnverständnis-->
+        <div data-role="page" id="task3Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task3Pic1.png" id="31" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task3Pic2.png" id="32" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task3Pic3.png" id="33" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task3Pic4.png" id="34" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task3Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                 
+                                                     <!--fourth task of lesesinnverständnis-->
+        <div data-role="page" id="task4Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Maler
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task4Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--4 task of lesesinnverständnis-->
+        <div data-role="page" id="task4Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task4Pic1.png" id="41" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task4Pic2.png" id="42" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task4Pic3.png" id="43" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task4Pic4.png" id="44" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task4Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                 
+                                                     <!--5 task of lesesinnverständnis-->
+        <div data-role="page" id="task5Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Schloss
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task5Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--5 task of lesesinnverständnis-->
+        <div data-role="page" id="task5Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task5Pic1.png" id="51" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task5Pic2.png" id="52" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task5Pic3.png" id="53" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task5Pic4.png" id="54" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task5Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                 
+                                                     <!--6 task of lesesinnverständnis-->
+        <div data-role="page" id="task6Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Fliege
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task6Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--6 task of lesesinnverständnis-->
+        <div data-role="page" id="task6Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task6Pic1.png" id="61" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task6Pic2.png" id="62" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task6Pic3.png" id="63" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task6Pic4.png" id="64" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task6Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                 
+                                                     <!--7 task of lesesinnverständnis-->
+        <div data-role="page" id="task7Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Schlange
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task7Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--7 task of lesesinnverständnis-->
+        <div data-role="page" id="task7Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task7Pic1.png" id="71" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task7Pic2.png" id="72" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task7Pic3.png" id="73" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task7Pic4.png" id="74" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task7Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--8 task of lesesinnverständnis-->
+        <div data-role="page" id="task8Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Boxer
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task8Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--8 task of lesesinnverständnis-->
+        <div data-role="page" id="task8Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task8Pic1.png" id="81" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task8Pic2.png" id="82" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task8Pic3.png" id="83" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task8Pic4.png" id="84" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task8Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--9 task of lesesinnverständnis-->
+        <div data-role="page" id="task9Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Schlitten
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task9Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--9 task of lesesinnverständnis-->
+        <div data-role="page" id="task9Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task9Pic1.png" id="91" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task9Pic2.png" id="92" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task9Pic3.png" id="93" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task9Pic4.png" id="94" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task9Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--10 task of lesesinnverständnis-->
+        <div data-role="page" id="task10Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Leichtigkeit
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task10Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--10 task of lesesinnverständnis-->
+        <div data-role="page" id="task10Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task10Pic1.png" id="101" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task10Pic2.png" id="102" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task10Pic3.png" id="103" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task10Pic4.png" id="104" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task10Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--11 task of lesesinnverständnis-->
+        <div data-role="page" id="task11Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Gerechtigkeit
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task11Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--11 task of lesesinnverständnis-->
+        <div data-role="page" id="task11Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task11Pic1.png" id="111" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task11Pic2.png" id="112" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task11Pic3.png" id="113" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task11Pic4.png" id="114" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task11Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--12 task of lesesinnverständnis-->
+        <div data-role="page" id="task12Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Wissbegierde
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task12Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--12 task of lesesinnverständnis-->
+        <div data-role="page" id="task12Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task12Pic1.png" id="121" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task12Pic2.png" id="122" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task12Pic3.png" id="123" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task12Pic4.png" id="124" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task12Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--13 task of lesesinnverständnis-->
+        <div data-role="page" id="task13Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Hilfsbereitschaft
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task13Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--13 task of lesesinnverständnis-->
+        <div data-role="page" id="task13Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task13Pic1.png" id="131" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task13Pic2.png" id="132" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task13Pic3.png" id="133" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task13Pic4.png" id="134" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task13Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--14 task of lesesinnverständnis-->
+        <div data-role="page" id="task14Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        hinterherlaufen
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task14Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--14 task of lesesinnverständnis-->
+        <div data-role="page" id="task14Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task14Pic1.png" id="141" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task14Pic2.png" id="142" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task14Pic3.png" id="143" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task14Pic4.png" id="144" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task14Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--15 task of lesesinnverständnis-->
+        <div data-role="page" id="task15Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        drüberspringen
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task15Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--15 task of lesesinnverständnis-->
+        <div data-role="page" id="task15Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task15Pic1.png" id="151" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task15Pic2.png" id="152" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task15Pic3.png" id="153" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task15Pic4.png" id="154" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task15Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--16 task of lesesinnverständnis-->
+        <div data-role="page" id="task16Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        eintreten
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task16Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--16 task of lesesinnverständnis-->
+        <div data-role="page" id="task16Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task16Pic1.png" id="161" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task16Pic2.png" id="162" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task16Pic3.png" id="163" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task16Pic4.png" id="164" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task16Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--17 task of lesesinnverständnis-->
+        <div data-role="page" id="task17Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Fotograf
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task17Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--17 task of lesesinnverständnis-->
+        <div data-role="page" id="task17Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task17Pic1.png" id="171" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task17Pic2.png" id="172" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task17Pic3.png" id="173" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task17Pic4.png" id="174" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task17Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--18 task of lesesinnverständnis-->
+        <div data-role="page" id="task18Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Rolltreppe
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task18Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--18 task of lesesinnverständnis-->
+        <div data-role="page" id="task18Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task18Pic1.png" id="181" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task18Pic2.png" id="182" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task18Pic3.png" id="183" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task18Pic4.png" id="184" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task18Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--19 task of lesesinnverständnis-->
+        <div data-role="page" id="task19Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Seepferdchen
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task19Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--19 task of lesesinnverständnis-->
+        <div data-role="page" id="task19Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task19Pic1.png" id="191" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task19Pic2.png" id="192" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task19Pic3.png" id="193" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task19Pic4.png" id="194" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task19Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                                     <!--20 task of lesesinnverständnis-->
+        <div data-role="page" id="task20Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Sie ist Chefsekretärin
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task20Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--20 task of lesesinnverständnis-->
+        <div data-role="page" id="task20Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task20Pic1.png" id="201" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task20Pic2.png" id="202" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task20Pic3.png" id="203" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task20Pic4.png" id="204" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task20Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--21 task of lesesinnverständnis-->
+        <div data-role="page" id="task21Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Er spielt im Orchester
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task2Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--21 task of lesesinnverständnis-->
+        <div data-role="page" id="task21Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task21Pic1.png" id="211" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task21Pic2.png" id="212" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task21Pic3.png" id="213" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task21Pic4.png" id="214" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task21Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--22 task of lesesinnverständnis-->
+        <div data-role="page" id="task22Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Er arbeitet im Grünen
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task22Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--22 task of lesesinnverständnis-->
+        <div data-role="page" id="task22Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task22Pic1.png" id="221" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task22Pic2.png" id="222" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task22Pic3.png" id="223" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task22Pic4.png" id="224" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task22Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--23 task of lesesinnverständnis-->
+        <div data-role="page" id="task23Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Er ist ganz schön stark
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task23Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--23 task of lesesinnverständnis-->
+        <div data-role="page" id="task23Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task23Pic1.png" id="231" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task23Pic2.png" id="232" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task23Pic3.png" id="233" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task23Pic4.png" id="234" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task23Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--24 task of lesesinnverständnis-->
+        <div data-role="page" id="task24Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Er hat etwas zu feiern
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task24Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--24 task of lesesinnverständnis-->
+        <div data-role="page" id="task24Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task24Pic1.png" id="241" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task24Pic2.png" id="242" onclick="switchToNextTask(this);" />    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task24Pic3.png" id="243" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task24Pic4.png" id="244" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task24Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--25 task of lesesinnverständnis-->
+        <div data-role="page" id="task25Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Er mag es nicht warm
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task25Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--25 task of lesesinnverständnis-->
+        <div data-role="page" id="task25Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task25Pic1.png" id="251" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task25Pic2.png" id="252" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task25Pic3.png" id="253" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task25Pic4.png" id="254" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task25Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--26 task of lesesinnverständnis-->
+        <div data-role="page" id="task26Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Das ist ihm beim Fussball passiert
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task26Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--26 task of lesesinnverständnis-->
+        <div data-role="page" id="task26Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task26Pic1.png" id="261" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task26Pic2.png" id="262" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task26Pic3.png" id="263" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task26Pic4.png" id="264" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task26Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--27 task of lesesinnverständnis-->
+        <div data-role="page" id="task27Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Sie wird sich sicher verspäten
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task27Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--27 task of lesesinnverständnis-->
+        <div data-role="page" id="task27Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task27Pic1.png" id="271" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task27Pic2.png" id="272" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task27Pic3.png" id="273" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task27Pic4.png" id="274" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task27Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--28 task of lesesinnverständnis-->
+        <div data-role="page" id="task28Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Er hätte besser nach oben geschaut
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task28Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--28 task of lesesinnverständnis-->
+        <div data-role="page" id="task28Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task28Pic1.png" id="281" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task28Pic2.png" id="282" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task28Pic3.png" id="283" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task28Pic4.png" id="284" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task28Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--29 task of lesesinnverständnis-->
+        <div data-role="page" id="task29Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Das wird sicher wehtun
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task29Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--29 task of lesesinnverständnis-->
+        <div data-role="page" id="task29Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task29Pic1.png" id="291" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task29Pic2.png" id="292" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task29Pic3.png" id="293" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task29Pic4.png" id="294" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task29Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--30 task of lesesinnverständnis-->
+        <div data-role="page" id="task30Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Das Bild zeigt, wo lang es geht
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task30Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--30 task of lesesinnverständnis-->
+        <div data-role="page" id="task30Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task30Pic1.png" id="301" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task30Pic2.png" id="302" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task30Pic3.png" id="303" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task30Pic4.png" id="304" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task30Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--31 task of lesesinnverständnis-->
+        <div data-role="page" id="task31Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Das Bild zeigt, was sie mag
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task31Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--31 task of lesesinnverständnis-->
+        <div data-role="page" id="task31Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task31Pic1.png" id="311" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task31Pic2.png" id="312" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task31Pic3.png" id="313" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task31Pic4.png" id="314" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task31Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--32 task of lesesinnverständnis-->
+        <div data-role="page" id="task32Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Das Bild zeigt, was ihm fehlt
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task32Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--32 task of lesesinnverständnis-->
+        <div data-role="page" id="task32Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task32Pic1.png" id="321" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task32Pic2.png" id="322" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task32Pic3.png" id="323" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task32Pic4.png" id="324" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task32Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--33 task of lesesinnverständnis-->
+        <div data-role="page" id="task33Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Das Bild zeigt, wie er sich fühlt
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task33Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--33 task of lesesinnverständnis-->
+        <div data-role="page" id="task33Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task33Pic1.png" id="331" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task33Pic2.png" id="332" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task33Pic3.png" id="333" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task33Pic4.png" id="334" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task33Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--34 task of lesesinnverständnis-->
+        <div data-role="page" id="task34Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Hier geht es noch hinaus
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task34Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--34 task of lesesinnverständnis-->
+        <div data-role="page" id="task34Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task34Pic1.png" id="341" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task34Pic2.png" id="342" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task34Pic3.png" id="343" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task34Pic4.png" id="344" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task34Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--35 task of lesesinnverständnis-->
+        <div data-role="page" id="task35Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Jetzt knallt es
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task35Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--35 task of lesesinnverständnis-->
+        <div data-role="page" id="task35Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task35Pic1.png" id="351" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task35Pic2.png" id="352" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task35Pic3.png" id="353" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task35Pic4.png" id="354" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task35Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--36 task of lesesinnverständnis-->
+        <div data-role="page" id="task36Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Vielleicht gibt es Finderlohn
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task36Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--36 task of lesesinnverständnis-->
+        <div data-role="page" id="task36Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task36Pic1.png" id="361" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task36Pic2.png" id="362" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task36Pic3.png" id="363" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task36Pic4.png" id="364" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task36Word');"/>
+
+            </div>
+           
+
+        </div> 
+                                 
+                                  <!--37 task of lesesinnverständnis-->
+        <div data-role="page" id="task37Word" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    <p class="centeredWord">
+                        
+                        Alles erscheint größer als es ist
+
+                    </p>
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task37Pics');"/>
+
+            </div>
+            
+
+        </div>
+                                
+                                
+                                 <!--37 task of lesesinnverständnis-->
+        <div data-role="page" id="task37Pics" data-dom-cache=true class="whitePage" >
+
+            <div data-role="content">
+
+               
+                <center>
+                    
+                 <table class="tableWithImagesDemo" >
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task37Pic1.png" id="371" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task37Pic2.png" id="372" onclick="switchToNextTask(this);"/>    </td> 
+
+                        </tr>
+
+                        <!--only for spacing-->
+                        <tr class="gapRow">
+                            <td class="gapField"/>  
+                        </tr>
+
+
+
+                        <tr class="contentRow"> 
+
+                            <td class="picField"> <image  src="css\images\picsForWords\task37Pic3.png" id="373" onclick="switchToNextTask(this);"/>   </td>
+                            <td class="picField"> <image  src="css\images\picsForWords\task37Pic4.png" id="374" onclick="switchToNextTask(this);"/>   </td> 
+
+                        </tr>
+
+
+                    </table>  
+                    
+                    
+                   
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft" onclick="switchToPage('task37Word');"/>
+
+            </div>
+           
+
+        </div>
+                                 
+                                 
+                                 <!--end page of the task bildergeschichte-->
+        <div data-role="page" id="endPage" data-dom-cache=true class="introPage" >
+
+            <div data-role="content">
+
+                <image src="css\images\icons\tipp.png" class="infoIcon"/>
+
+                <center>
+                    <h1 class="taskEndText">Diese Aufgabe haben Sie geschafft!</h1>
+
+                </center>
+
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" />
+
+            </div>
+
+
+        </div> 
+
+
+    </body>
+
+
+</html>
