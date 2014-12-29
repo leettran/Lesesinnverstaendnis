@@ -12,7 +12,7 @@
 
 
 
-     .kreis{
+    .kreis{
         background-color: #64C463;
         position: absolute;
         width: 100px;
@@ -27,42 +27,43 @@
         text-shadow: none;
 
     }
-    
-    
+
+
     .centeredWord{
-    width:900px;
-    height:400px;
-    font-size: 120px;
-    font-weight: bold;
-    text-align: center;
-    position:absolute;
-    left:50%;
-    top:50%;
-    margin-top: -200px;
-    margin-left: -450px;
-   
-}
+        width:900px;
+        height:400px;
+        font-size: 120px;
+        font-weight: bold;
+        text-align: center;
+        position:absolute;
+        left:50%;
+        top:50%;
+        margin-top: -200px;
+        margin-left: -450px;
+
+    }
 
 
- .infoDiv{
-    width:600px;
-    height:300px;
-    font-size: 45px;
-    text-align: center;
-    text-decoration: none;
-    text-shadow: none;
-    font-weight: bold;
-    position:absolute;
-    left:50%;
-    top:50%;
-    margin-top: -150px;
-    margin-left: -300px;
-    background-color: #84D984;
-    visibility: hidden;
-}
-    
-    
-     .restCirclesCounter{
+    .infoDiv{
+        width:600px;
+        height:300px;
+        font-size: 45px;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: none;
+        font-weight: bold;
+        position:absolute;
+        left:50%;
+        top:50%;
+        opacity: 0.7;
+        margin-top: -150px;
+        margin-left: -300px;
+        background-color: #84D984;
+        visibility: hidden;
+    }
+
+
+    .restCirclesCounter{
         text-shadow: none;
         font-size: 33px;
         font-weight: bold;
@@ -71,8 +72,8 @@
         left: 73%;
         border: white solid 1px;
     }
-    
-    
+
+
     .kreisSelected{
         background-color: #ffff00;
         position: absolute;
@@ -88,7 +89,7 @@
         text-shadow: none;
 
     }
-    
+
 
     .testname{
         width: 500px;
@@ -172,9 +173,9 @@
         left: 5%;
         right: 5%;
     }
-    
-    
-    
+
+
+
     .introTextTop{
         font-size: 33px;
         color: black;
@@ -186,8 +187,8 @@
         left: 5%;
         right: 5%;
     }
-    
-    
+
+
     .introTextMiddle{
         font-size: 33px;
         color: black;
@@ -224,10 +225,10 @@
         font-size: x-large;
         text-shadow: none;
     }
-    
-    
+
+
     .defaultButtonTop{
-        
+
         background-size: 100%;
         background-repeat:no-repeat;       
         height: 88px;
@@ -238,9 +239,9 @@
         font-size: x-large;
         text-shadow: none;
     }
-    
+
     .defaultButtonTopLeft{
-        
+
         background-size: 100%;
         background-repeat:no-repeat;       
         height: 88px;
@@ -251,9 +252,9 @@
         font-size: x-large;
         text-shadow: none;
     }
-    
+
     .defaultButtonMiddle{
-        
+
         background-size: 100%;
         background-repeat:no-repeat;       
         height: 88px;
@@ -293,9 +294,104 @@
 
     .defaultButton:active, .defaultButton:focus, .defaultButton.active{
         background-image:url('images/btns-bg/bt-weiter-hover.png');
+        /*        position:absolute; 
+                bottom: 1.8%;
+                right: 4.8%;*/
+        margin-bottom: 10px;
+        margin-right: -5px;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+
+    .defaultButtonTopLeft:active, .defaultButtonTopLeft:focus, .defaultButtonTopLeft.active{
+        background-image:url('images/btns-bg/bt-weiter-hover.png');
+        /*        position:absolute; 
+                bottom: 1.8%;
+                right: 4.8%;*/
+        margin-top: -5px;
+        margin-left: 5px;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+
+    .defaultButtonTop:active, .defaultButtonTop:focus, .defaultButtonTop.active{
+        background-image:url('images/btns-bg/bt-weiter-hover.png');
+        /*        position:absolute; 
+                bottom: 1.8%;
+                right: 4.8%;*/
+        margin-top: -10px;
+        margin-right: 5px;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+
+    .defaultButtonMiddle:active, .defaultButtonMiddle:focus, .defaultButtonMiddle.active{
+        background-image:url('images/btns-bg/bt-weiter-hover.png');
+        /*        position:absolute; 
+                bottom: 1.8%;
+                right: 4.8%;*/
+        margin-top: -10px;
+        margin-right: 5px;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+
+    .defaultButtonClicked{
+        background-image:url('images/btns-bg/bt-weiter-hover.png');
         position:absolute; 
         bottom: 1.8%;
         right: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+
+    .defaultButtonTopLeftClicked{
+        background-image:url('images/btns-bg/bt-weiter-hover.png');
+        position:absolute; 
+        top: 0.7%;
+        left: 1.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .defaultButtonTopClicked{
+        background-image:url('images/btns-bg/bt-weiter-hover.png');
+        /*        position:absolute; 
+                bottom: 1.8%;
+                right: 4.8%;*/
+        margin-top: -10px;
+        margin-right: 5px;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+
+    .defaultButtonMiddleClicked{
+        background-image:url('images/btns-bg/bt-weiter-hover.png');
+        /*        position:absolute; 
+                bottom: 1.8%;
+                right: 4.8%;*/
+        margin-top: -10px;
+        margin-right: 5px;
         background-image: none;
         outline: none;
         -webkit-box-shadow: none;
@@ -454,7 +550,7 @@
         border:2px solid #64C463;
         width: 280px;
         height: 280px;
-       
+
     }
 
     .borderedTd{
@@ -475,9 +571,9 @@
         height: 200px;
 
     }
-    
-    
-     .targetField{
+
+
+    .targetField{
         border:1px solid black; 
         min-width: 175px;
         min-height: 180px;
@@ -485,8 +581,8 @@
         height: 180px;
 
     }
-    
-     .targetFieldSmall{
+
+    .targetFieldSmall{
         border:1px solid black; 
         min-width: 175px;
         min-height: 180px;
@@ -502,7 +598,7 @@
         width: 195px;
         height: 200px;
     }
-    
+
     .picField{
         border:2px solid white;
         min-width: 280px;
@@ -510,8 +606,8 @@
         width: 280px;
         height: 280px;
     }
-    
-    
+
+
     .origField{
         border:1px solid white;
         min-width: 175px;
@@ -519,8 +615,8 @@
         width: 175px;
         height: 180px;
     }
-    
-     .origFieldSmall{
+
+    .origFieldSmall{
         border:1px solid white;
         min-width: 175px;
         min-height: 180px;
@@ -597,52 +693,52 @@
         border-spacing: 1em;
         margin-top: 100px;
         width: 700px;
-       
+
     }
-    
-    
+
+
     .tableWithImagesTask1{
-       border-collapse:separate; 
+        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
         width: 533px; 
     }
 
     .tableWithImagesTask2{
-       border-collapse:separate; 
+        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
         width: 712px; 
     }
-    
+
     .tableWithImagesTask3{
-       border-collapse:separate; 
+        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
         width: 712px; 
     }
-    
-     .tableWithImagesTask4{
+
+    .tableWithImagesTask4{
         border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
         width: 895px; 
     }
-    
-     .tableWithImagesTask5{
-       border-collapse:separate; 
+
+    .tableWithImagesTask5{
+        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
         width: 895px; 
     }
-    
+
     .tableWithImagesTask6{
-       border-collapse:separate; 
+        border-collapse:separate; 
         border-spacing: 1em;
         margin: 0 auto;
         width: 895px; 
     }
-    
+
     .borderedTargetField{
 
         border:5px solid orange;

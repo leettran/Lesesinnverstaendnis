@@ -104,6 +104,9 @@ and open the template in the editor.
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" id="demoWeiterBtn" class="defaultButton"/>
+                
+                
+                <image src="css\images\hand.png" id="demoHand1" style="position: absolute;bottom: 20%;left: 20%;"/>
 
             </div>
             
@@ -113,15 +116,41 @@ and open the template in the editor.
                 $(document).delegate('#leseverstaendnisDemo1', 'pageshow', function () {
 
                     function simulateClick() {
+                        
+                        $("#demoWeiterBtn").attr("class","defaultButtonClicked");
                         setTimeout(function () {
-                            $("#demoWeiterBtn").trigger("click");
+                            
+                            // set class back
+                            $("#demoWeiterBtn").attr("class","defaultButton");
+
                             $.mobile.changePage('#leseverstaendnisDemo2', {transition: "flip"});
-                        }, 2000);
+                            // animate hand cursor back 
+                            $("#demoHand1").animate({
+                                left: '20' + '%',
+                                bottom: '20' + '%'
+//                                height: "toggle"
+                            }, 1000);
+                        }, 500);
 
                     }
+                    
+                 
+                    // slide hand cursor to button
+                        setTimeout(function () {
+                            $("#demoHand1").animate({
+                                left: '85' + '%',
+                                bottom: '0.5' + '%'
+//                                height: "toggle"
+                            }, 2000, function () {
+                                // Animation completed
+                            
+                              simulateClick();
+                              
+                            });
+                        }, 1000);
+                    
+                                 
 
-
-                    simulateClick();
 
                 });
             </script>
@@ -174,6 +203,8 @@ and open the template in the editor.
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" id="demoZurueckBtn" class="defaultButtonTopLeft"/>
+                
+                <image src="css\images\hand.png" id="demoHand2" style="position: absolute;bottom: 20%;left: 20%;"/>
 
             </div>
             
@@ -184,24 +215,49 @@ and open the template in the editor.
 
                     function simulateClick() {
                         
+                        $("#demoZurueckBtn").attr("class","defaultButtonTopLeftClicked");
+                        
                         setTimeout(function () {
+                            
+                            // set class back
+                            $("#demoZurueckBtn").attr("class","defaultButtonTopLeft");
+                            // append info div
                             $("#infoBalloon").css("visibility","visible");
                             
+               
                              setTimeout(function () {
-                                 
+                                 // hide info div
                                  $("#infoBalloon").css("visibility","hidden");
-                                  $("#demoZurueckBtn").trigger("click");
+                                  
                             $.mobile.changePage('#leseverstaendnisDemo1Rep', {transition: "flip"});
-                                  }, 5000);
+                            // animate hand cursor back 
+                            $("#demoHand2").animate({
+                                left: '20' + '%',
+                                bottom: '20' + '%'
+//                                height: "toggle"
+                            }, 1000);
+                                  }, 3000);
                              
                             
                            
-                        }, 3000);
+                        }, 500);
 
                     }
+                    
+                     // slide hand cursor to button
+                        setTimeout(function () {
+                            $("#demoHand2").animate({
+                                left: '5' + '%',
+                                bottom: '82' + '%'
+//                                height: "toggle"
+                            }, 1000, function () {
+                                // Animation completed
 
+                              simulateClick();
+                              
+                            });
+                        }, 1000);
 
-                    simulateClick();
 
                 });
             </script>
@@ -226,6 +282,8 @@ and open the template in the editor.
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" id="demoWeiterBtnRep" class="defaultButton"/>
+                
+                <image src="css\images\hand.png" id="demoHand3" style="position: absolute;bottom: 20%;left: 20%;"/>
 
             </div>
             
@@ -235,15 +293,37 @@ and open the template in the editor.
                 $(document).delegate('#leseverstaendnisDemo1Rep', 'pageshow', function () {
 
                     function simulateClick() {
+                        $("#demoWeiterBtnRep").attr("class","defaultButtonClicked");
+                        
                         setTimeout(function () {
-                            $("#demoWeiterBtnRep").trigger("click");
+                            // set class back
+                            $("#demoWeiterBtnRep").attr("class","defaultButton");
+                            
                             $.mobile.changePage('#leseverstaendnisDemo2Rep', {transition: "flip"});
-                        }, 2000);
+                            // animate hand cursor back 
+                            $("#demoHand3").animate({
+                                left: '20' + '%',
+                                bottom: '20' + '%'
+//                                height: "toggle"
+                            }, 2000);
+                        }, 500);
 
                     }
 
+// slide hand cursor to button
+                        setTimeout(function () {
+                            $("#demoHand3").animate({
+                                left: '85' + '%',
+                                bottom: '0.5' + '%'
+//                                height: "toggle"
+                            }, 1000, function () {
+                                // Animation completed
 
-                    simulateClick();
+                              simulateClick();
+                              
+                            });
+                        }, 1000);
+
 
                 });
             </script>
@@ -291,6 +371,8 @@ and open the template in the editor.
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButtonTopLeft"/>
+                
+                 <image src="css\images\hand.png" id="demoHand4" style="position: absolute;bottom: 20%;left: 20%;"/>
 
             </div>
             
@@ -298,23 +380,49 @@ and open the template in the editor.
             <script type="text/javascript">
 
                 $(document).delegate('#leseverstaendnisDemo2Rep', 'pageshow', function () {
-
+                    
+                   
                     function simulateClick() {
                         
-                        setTimeout(function () {
-                            $("#vase").attr('class', 'selectedImage');
-                            
+                         $("#vase").attr('class', 'selectedImage');
+                         
+                       
+                                                     
                              setTimeout(function () {
                                                                
                             $.mobile.changePage('#bridgingPage', {transition: "flip"});
-                                  }, 3000);
+                            // animate hand cursor back 
+                            $("#demoHand4").animate({
+                                left: '20' + '%',
+                                bottom: '20' + '%'
+//                                height: "toggle"
+                            }, 1000, function () {
+                                // Animation completed
+
+                             $("#vase").attr('class', 'picField');
+                              
+                            });
+                                  }, 1500);
                                                        
-                        }, 3000);
+                        
 
                     }
 
+// slide hand cursor to button
+                        setTimeout(function () {
+                            $("#demoHand4").animate({
+                                left: '35' + '%',
+                                bottom: '20' + '%'
+//                                height: "toggle"
+                            }, 1000, function () {
+                                // Animation completed
 
-                    simulateClick();
+                              simulateClick();
+                              
+                            });
+                        }, 1500);
+
+//                    simulateClick();
 
                 });
             </script>
@@ -1735,7 +1843,7 @@ and open the template in the editor.
                 </center>
 
 
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task2Pics');"/>
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="switchToPage('task21Pics');"/>
 
             </div>
             
