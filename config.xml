@@ -15,7 +15,7 @@ and open the template in the editor.
     <preference name="fullscreen" value="true" />
     <preference name="loglevel" value="DEBUG" />     
     <description>
-       This is the Lesesinnverstaendnis task of the NeuroCare- Testbatterie 
+       This is the Lesesinnverstaendnis task of the NeuroCare- Testbatterie. 
     </description>
     
     <author href="http://www.ascora.de" email="aem@ascora.de">
